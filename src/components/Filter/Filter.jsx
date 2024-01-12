@@ -3,7 +3,7 @@ import { Div, Label, Input } from './Filter.styled';
 
 import { nanoid } from '@reduxjs/toolkit';
 import { useSelector, useDispatch } from 'react-redux';
-// import { getFilter } from '../../redux/selectors';
+import { getFilter } from '../../redux/selectors';
 import { changeFilter } from '../../redux/filterSlice';
 
 const filterInputId = nanoid();
@@ -20,7 +20,7 @@ const Filter = () => {
   return (
     <Div>
       <Label>
-        Find contacts by normalizedValue
+        Find contacts by name
         <Input
           type="text"
           value={value}

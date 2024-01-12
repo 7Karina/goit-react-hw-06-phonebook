@@ -1,4 +1,4 @@
-import { getContacts } from '../../redux/selectors';
+import { getVisibleContacts } from '../../redux/selectors';
 import { useSelector } from 'react-redux';
 
 import { Container, Title, SubTitle, Wrapper } from './App.styled';
@@ -7,7 +7,7 @@ import ContactList from '../ContactList/ContactList';
 import Filter from '../Filter/Filter';
 
 const App = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(getVisibleContacts);
 
   return (
     <Container>
