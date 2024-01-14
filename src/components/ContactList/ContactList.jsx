@@ -9,8 +9,8 @@ const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
 
-  const handleDelete = id => {
-    dispatch(removeContact(id));
+  const handleDelete = () => {
+    dispatch(removeContact());
   };
 
   return (
@@ -18,15 +18,14 @@ const ContactList = () => {
       {contacts.map(contact => (
         <Item key={contact.id}>
           {contact.name + ' : ' + contact.number}
-          {
-            <Button
-              type="button"
-              name="delete"
-              onClick={() => handleDelete(contact.id)}
-            >
-              Delete
-            </Button>
-          }
+
+          <Button
+            type="button"
+            name="delete"
+            onClick={() => handleDelete(contact.id)}
+          >
+            Delete
+          </Button>
         </Item>
       ))}
     </List>
