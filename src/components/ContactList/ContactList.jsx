@@ -15,14 +15,13 @@ const ContactList = () => {
 
   return (
     <List>
-      {contacts.map(contact => (
-        <Item key={contact.id}>
+      {contacts.map((contact, index) => (
+        <Item key={index}>
           {contact.name + ' : ' + contact.number}
-
           <Button
             type="button"
             name="delete"
-            onClick={() => handleDelete(contact.id)}
+            onClick={() => handleDelete(index)}
           >
             Delete
           </Button>
