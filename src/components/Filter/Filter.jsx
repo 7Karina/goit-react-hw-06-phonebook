@@ -14,6 +14,7 @@ const Filter = () => {
 
   const onChange = event => {
     const normalizedValue = event.target.value.toLowerCase();
+
     dispatch(changeFilter(normalizedValue));
   };
 

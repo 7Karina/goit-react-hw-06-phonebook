@@ -3,7 +3,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { Form, Label, Button, Input } from './ContactForm.styled';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getVisibleContacts } from '../../redux/selectors';
+import { getContacts } from '../../redux/selectors';
 import { addContact } from '../../redux/contactsSlice';
 
 const nameInputId = nanoid();
@@ -13,7 +13,7 @@ const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(getVisibleContacts);
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
